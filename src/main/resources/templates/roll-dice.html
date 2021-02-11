@@ -5,6 +5,26 @@
     <title>Roll The Dice</title>
 </head>
 <body>
-<h1>Rolling the Dice!!!</h1>
+<nav th:replace="partials/navbar :: nav"></nav>
+<header th:replace="partials/header :: header('Roll the Dice!')"></header>
+    <h1>It's time to Roll the Dice!!! Guess which number I'm going to roll!!!</h1>
+        <a th:href="@{/roll-dice/1}">Guess 1</a><br>
+        <a th:href="@{/roll-dice/2}">Guess 2</a><br>
+        <a th:href="@{/roll-dice/3}">Guess 3</a><br>
+        <a th:href="@{/roll-dice/4}">Guess 4</a><br>
+        <a th:href="@{/roll-dice/5}">Guess 5</a><br>
+        <a th:href="@{/roll-dice/6}">Guess 6</a>
+
+<div th:if="${myGuess}">Your guess was <span th:text="${myGuess}">
+    </span><br>The rolled number is <span th:text="${randomNumber}"></span>
+</div>
+<!--/////////////////////////////////////////////////////////////////////-->
+<!--This code will check to see if the guess matches the random number-->
+<!--/////////////////////////////////////////////////////////////////////-->
+    <h3 th:if="${isCorrectGuess}">Ding! Ding! Ding! You guessed correctly!</h3>
+    <h3 th:if="${isCorrectGuess != null && !isCorrectGuess}">Buzz!!!! Sorry, you've chosen poorly. Try again!</h3>
+<footer th:replace="partials/partials :: footer">
+
+</footer>
 </body>
 </html>
