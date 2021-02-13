@@ -2,14 +2,13 @@ package com.codeup.springblog.models;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "posts")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "INT(11) UNSIGNED")
-//    private String title;
-//    private String body;
     private long id;
 
     @Column(nullable = false)
@@ -18,9 +17,10 @@ public class Post {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String body;
 
-    public Post(){
+    public Post() {
     }
-    public Post(long id, String title, String body){
+
+    public Post(long id, String title, String body) {
         this.title = title;
         this.body = body;
         this.id = id;

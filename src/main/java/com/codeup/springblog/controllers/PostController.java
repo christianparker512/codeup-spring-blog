@@ -1,7 +1,5 @@
 package com.codeup.springblog.controllers;
 
-//
-
 import com.codeup.springblog.models.Post;
 import com.codeup.springblog.repository.PostRepository;
 import org.springframework.stereotype.Controller;
@@ -11,34 +9,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Controller
 public class PostController {
 
     private final PostRepository postsDao;
-//    public PostController(PostRepository postsDao){
-//        this.postsDao = postsDao;
-//    }
 
     public PostController(PostRepository postsDao){
-
         this.postsDao = postsDao;
     }
 
     @GetMapping("/posts")
     public String postsIndex(Model model){
-//        Post post1 = new Post("First Post", "This is my first post", 1);
-//        Post post2 = new Post("Second Post", "This is my 2nd post", 2);
-//        Post post3 = new Post("Third Post", "This is my 3rd post", 3);
 
-        //Line 33 has been changed to 32. postsDao.findAll(); added.
+
         List<Post> postList = postsDao.findAll();
-//        List<Post> postList = new ArrayList<>();
-//        postList.add(post1);
-//        postList.add(post2);
-//        postList.add(post3);
 
 
         model.addAttribute("title", "All Posts");
@@ -50,11 +37,6 @@ public class PostController {
     @GetMapping("/posts/{id}")
     public String postView(Model model, @PathVariable long id){
 //        get single post by id later
-//
-
-//        Post post = new Post("First Post", "This is my first post", 1);
-//        model.addAttribute("title", "Single Posts");
-//        model.addAttribute("post", post);
         Post post = postsDao.getOne(id);
         return "posts/show";
     }
