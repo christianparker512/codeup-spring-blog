@@ -1,11 +1,14 @@
+
+
 package com.codeup.springblog.models;
+//        use adlister_db;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "dogs")
 //@Table(name= "dogs", uniqueConstraints = {
-//        @UniqueConstraint(columnNames = {"name", "reside_state"})
+//        @UniqueConstraint(columnNames = {"name", "reside_state"}))
 //})
 
 public class Dog {
@@ -14,13 +17,13 @@ public class Dog {
     @Column(columnDefinition = "INT(11) UNSIGNED")
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "tinyint(3) unsigned", unique = true)
     private int age;
 
     @Column(nullable = false)
     private String name;
 
-    @Column(name = "reside_state", nullable = false, columnDefinition = "char(2)")
+    @Column(columnDefinition = "char(2) default 'XX'", name = "reside_state")
     private String resideState;
 
     public Dog() {
@@ -50,11 +53,11 @@ public class Dog {
         this.name = name;
     }
 
-    public String getResideState() {
+    public String getReside_State() {
         return resideState;
     }
 
-    public void setResideState(String resideState) {
+    public void setReside_State(String resideState) {
         this.resideState = resideState;
     }
 }
