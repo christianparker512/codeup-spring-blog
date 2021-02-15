@@ -7,16 +7,20 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HelloController {
 
+//    This will just say hello from spring since it has no variable
     @GetMapping("/hello")
     @ResponseBody
         public String hello(){
             return "Hello from Spring!";
     }
+    //The code below will result in whomever it saying hello to whomever the person says in the url.
     @GetMapping("/hello/{name}")
     @ResponseBody
     public String sayHello(@PathVariable String name){
         return "Hello " + name + "!";
     }
+
+    //The below will result in an incremental output.
     @RequestMapping(path = "/increment/{number}", method = RequestMethod.GET)
     @ResponseBody
     public String addOne(@PathVariable int number){
