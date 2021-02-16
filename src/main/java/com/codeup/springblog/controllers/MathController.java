@@ -26,12 +26,14 @@ public class MathController {
     @GetMapping("/multiply/{num1}/and/{num2}")
     @ResponseBody
     public int multiply(@PathVariable int number1, @PathVariable int number2) {
+
         return number1 * number2;
     }
 
     @GetMapping("/divide/{num1}/by/{num2}")
     @ResponseBody
     public double multiply(@PathVariable double number1, @PathVariable double number2) {
+
         return number1 / number2;
     }
 

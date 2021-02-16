@@ -11,7 +11,9 @@ public class HelloController {
     //    This will just say hello from spring since it has no variable
     @GetMapping("/hello")
     @ResponseBody
+    //Can call this method anything, but it makes sense it says hello.
     public String hello() {
+
         return "Hello from Spring!";
     }
 
@@ -19,6 +21,7 @@ public class HelloController {
     @GetMapping("/hello/{name}")
     @ResponseBody
     public String sayHello(@PathVariable String name) {
+
         return "Hello " + name + "!";
     }
 
@@ -26,11 +29,13 @@ public class HelloController {
     @RequestMapping(path = "/increment/{number}", method = RequestMethod.GET)
     @ResponseBody
     public String addOne(@PathVariable int number) {
+
         return number + " plus one is " + (number + 1) + "!";
     }
 
     @GetMapping("/join")
     public String showJoinForm() {
+
         return "join";
     }
 
