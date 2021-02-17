@@ -1,25 +1,27 @@
-//package com.codeup.springblog.models;
+package com.codeup.springblog.models;
 //
 //import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "ads")
+public class Ad {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 //
-//import javax.persistence.*;
+    @Column(nullable = false)
+    private String title;
 //
-//@Entity
-//@Table(name = "ads")
-//public class Ad {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private long id;
-//
-//    @Column(nullable = false)
-//    private String title;
-//
-//    @Column(nullable = false, length = 100000)
-//    private String description;
-//
-//    public Ad(){
-//
-//    }
+    @Column(nullable = false, length = 100000)
+    private String description;
+
+    public Ad(){
+
+    }
 //
 //    public long getId() {
 //        return id;
@@ -55,4 +57,4 @@
 //        this.title = title;
 //        this.description = description;
 //    }
-//}
+}

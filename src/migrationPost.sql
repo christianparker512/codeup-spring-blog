@@ -9,7 +9,6 @@ CREATE TABLE posts (
                      author varchar(240) NOT Null,
                      title VARCHAR(240) NOT NULL,
                      body TEXT NOT NULL,
-                     date date,
                      PRIMARY KEY (id)
 
 );
