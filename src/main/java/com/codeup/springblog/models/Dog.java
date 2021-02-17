@@ -17,13 +17,13 @@ public class Dog {
     @Column(columnDefinition = "INT(11) UNSIGNED")
     private long id;
 
-    @Column(nullable = false, columnDefinition = "tinyint(3) unsigned", unique = true)
+    @Column(nullable = false)
     private int age;
 
     @Column(nullable = false)
     private String name;
 
-    @Column(columnDefinition = "char(2) default 'XX'", name = "reside_state")
+    @Column(name = "reside_state", nullable= false, columnDefinition = "char(2)")
     private String resideState;
 
     public Dog() {

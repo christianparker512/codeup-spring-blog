@@ -12,21 +12,21 @@ import java.util.List;
 
 @Controller
 public class HowdyController {
-
+//
 //    @GetMapping("/hi")
 //    public String helloView(){
 //        //This will return a file named howdy.html that is inside of resources/templates
 //        return "howdy";
 //    }
 
-//    @GetMapping("/hi/{name}")
-//    public String helloNameView(@PathVariable String name, Model model){
-//        //This will take the name from the url parameter and add it to the model as an attribute.
-//        // This allows for us to dynamically add items to our view
-//        //The Model object is different from our models that represent the DB
-//        model.addAttribute("name", name);
-//        return "howdy";
-//    }
+    @GetMapping("/hi/{name}")
+    public String helloNameView(@PathVariable String name, Model model){
+        //This will take the name from the url parameter and add it to the model as an attribute.
+        // This allows for us to dynamically add items to our view
+        //The Model object is different from our models that represent the DB
+        model.addAttribute("name", name);
+        return "howdy";
+    }
 ////
 //
 //    // if and each tags

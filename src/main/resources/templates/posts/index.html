@@ -1,20 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <meta charset="UTF-8">
-    <title>Parker is Creative</title>
-</head>
+<head th:replace="partials/head :: header-links"></head>
 <body>
-<nav th:replace="partials/navbar :: nav"></nav>
-<header th:replace="partials/header :: header('Welcome to the Parker is Creative!')"></header>
+<nav th:replace="partials/navbar :: navbar"></nav>
 
-<main class="container">
-    <div class="card" th:each="post : ${posts}">
-        <h3 class="text-center" th:text="${post.title}"></h3>
-        <p th:text="${post.body}"></p>
-    </div>
-</main>
+<!-- This is where we iterate through the Posts ArrayList -->
+<h1>Here are all the posts!</h1>
 
-<footer th:replace="partials/footer :: footer"></footer>
+<div th:each="post : ${posts}">
+    <h1 th:text="${post.title}"></h1>
+    <p th:text="${post.body}"></p>
+</div>
 
+
+<div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

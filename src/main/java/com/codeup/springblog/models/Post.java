@@ -32,14 +32,17 @@ public class Post {
     }
 
     public void setAuthor(String author) {
+
         this.author = author;
     }
 
     public Date getDate() {
+
         return date;
     }
 
     public void setDate(Date date) {
+
         this.date = date;
     }
 
@@ -52,26 +55,32 @@ public class Post {
     }
 
     public String getTitle() {
+
         return title;
     }
 
     public void setTitle(String title) {
+
         this.title = title;
     }
 
     public String getBody() {
+
         return body;
     }
 
     public void setBody(String body) {
+
         this.body = body;
     }
 
     public long getId() {
+
         return id;
     }
 
     public void setId(long id) {
+
         this.id = id;
     }
 }

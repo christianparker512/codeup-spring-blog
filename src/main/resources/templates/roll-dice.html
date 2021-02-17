@@ -5,8 +5,8 @@
     <title>Roll The Dice</title>
 </head>
 <body>
-<nav th:replace="partials/navbar :: nav"></nav>
-<header th:replace="partials/header :: header('Roll the Dice!')"></header>
+<nav th:replace="partials/partials :: navbar"></nav>
+<header th:replace="partials/partials :: header('Roll the Dice!')"></header>
     <h1>It's time to Roll the Dice!!! Guess which number I'm going to roll!!!</h1>
         <a th:href="@{/roll-dice/1}">Guess 1</a><br>
         <a th:href="@{/roll-dice/2}">Guess 2</a><br>
