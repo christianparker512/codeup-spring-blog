@@ -6,8 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Controller
 public class PostController {
@@ -19,16 +18,7 @@ public class PostController {
 
     @GetMapping("/posts")
     public String postsIndex(Model model){
-//        Post post1 = new Post(1,"this is the author", "this is the title", "This is the body");
-//        Post post2 = new Post(2,"this is the author", "this is the title", "This is the body");
-//        Post post3 = new Post(3,"this is the author", "this is the title", "This is the body");
 //
-//        List<Post> postList = new ArrayList<>();
-//        postList.add(post1);
-//        postList.add(post2);
-//        postList.add(post3);
-
-//        model.addAttribute("title", "All Posts");
         model.addAttribute("posts", postsDao.findAll());
 
         return "posts/index";
@@ -36,13 +26,38 @@ public class PostController {
 
     @GetMapping("/posts/{id}")
     public String postView(Model model, @PathVariable long id){
-//        get single post by id later
-//        Post post = new Post(1, "This is my first post", "try this");
-//        model.addAttribute("title", "Single Posts");
+//
         Post post = postsDao.getOne(id);
         model.addAttribute("post", post);
         return "posts/show";
     }
+
+    @GetMapping("/posts/{id}/edit")
+    public String viewEditPostForm(@PathVariable long id, Model model){
+        model.addAttribute("post", postsDao.getOne(id));
+        return "posts/edit";
+    }
+    @PostMapping("/posts/{id}/edit")
+    public String updatePost(@PathVariable long id, @RequestParam String author, @RequestParam String title, @RequestParam String body){
+
+        Post post = new Post (
+                id,
+                author,
+                title,
+                body
+        );
+        postsDao.save(post);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("/posts/{id}/delete")
+    public String deletePost(@PathVariable long id){
+        System.out.println("Deleting post...");
+        postsDao.deleteById(id);
+        return "redirect:/posts";
+    }
+
+
 
     @GetMapping("/posts/create")
     @ResponseBody

@@ -29,8 +29,7 @@ public class Post {
         this.body = body;
     }
 
-    public Post(int i, String s, String second) {
-    }
+
 
     public long getId() {
         return id;
