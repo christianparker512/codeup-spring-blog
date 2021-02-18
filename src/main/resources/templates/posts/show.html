@@ -8,10 +8,10 @@
 <header th:replace="partials/header :: header('Welcome to Parker is Creative!')"></header>
 
 <main>
-        <h1>Here is a single post</h1>
-        <h2 th:text="${post.title}"></h2>
+    <div>
+        <h1>Here is a single post</h1><br>
+        <h4 th:text="${post.title}"></h4>
         <p th:text="${post.body}"></p>
-
     </div>
 </main>
 

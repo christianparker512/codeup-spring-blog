@@ -8,11 +8,11 @@
 <h1>Here are all the posts!</h1>
 
 <div th:each="post : ${posts}">
-    <h1 th:text="${post.title}"></h1>
+    <h4 th:text="${post.title}"></h4>
     <p th:text="${post.body}"></p>
 </div>
 
+<div th:replace="partials/footer :: footer"></div>
 
-<div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>
