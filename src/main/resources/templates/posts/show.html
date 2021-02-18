@@ -9,13 +9,13 @@
 
 <main>
         <h1>Here is a single post</h1>
-        <h2 th:text="${posts.title}"></h2>
-        <p th:text="${posts.body}"></p>
+        <h2 th:text="${post.title}"></h2>
+        <p th:text="${post.body}"></p>
 
     </div>
 </main>
 
-<footer th:replace="partials/partials :: footer"></footer>
+<footer th:replace="partials/footer :: footer"></footer>
 
 </body>
 </html>

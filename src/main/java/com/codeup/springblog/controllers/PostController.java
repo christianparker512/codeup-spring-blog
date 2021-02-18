@@ -7,34 +7,39 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Controller
 public class PostController {
+    private final PostRepository postsDao;
+
+    public PostController(PostRepository postsDao) {
+        this.postsDao = postsDao;
+    }
 
     @GetMapping("/posts")
     public String postsIndex(Model model){
-        Post post1 = new Post(1,"hello", "hello");
-        Post post2 = new Post(2, "This is my 2nd post", "second");
-        Post post3 = new Post(3, "This is my 3rd post", "third");
+//        Post post1 = new Post(1,"this is the author", "this is the title", "This is the body");
+//        Post post2 = new Post(2,"this is the author", "this is the title", "This is the body");
+//        Post post3 = new Post(3,"this is the author", "this is the title", "This is the body");
+//
+//        List<Post> postList = new ArrayList<>();
+//        postList.add(post1);
+//        postList.add(post2);
+//        postList.add(post3);
 
-        List<Post> postList = new ArrayList<>();
-        postList.add(post1);
-        postList.add(post2);
-        postList.add(post3);
-
-        model.addAttribute("title", "All Posts");
-        model.addAttribute("posts", postList);
+//        model.addAttribute("title", "All Posts");
+        model.addAttribute("posts", postsDao.findAll());
 
         return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
-    public String postView(Model model){
+    public String postView(Model model, @PathVariable long id){
 //        get single post by id later
-        Post post = new Post(1, "This is my first post", "try this");
-        model.addAttribute("title", "Single Posts");
+//        Post post = new Post(1, "This is my first post", "try this");
+//        model.addAttribute("title", "Single Posts");
+        Post post = postsDao.getOne(id);
         model.addAttribute("post", post);
         return "posts/show";
     }

@@ -1,4 +1,4 @@
-use blog_db;
+use adlister_db;
 
 insert into posts (id, author, title, body) values (1, 'Ammamaria Haston', 'Skeleton Key, The', 'etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus');
 insert into posts (id, author, title, body) values (2, 'Stafford Rizzolo', 'Ciao Manhattan (Ciao! Manhattan)', 'id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique');
