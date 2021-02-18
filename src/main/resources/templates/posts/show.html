@@ -4,16 +4,16 @@
     <title>Parker is Creative!</title>
 </head>
 <body>
-<nav th:replace="partials/navbar :: nav"></nav>
+<nav th:replace="partials/navbar :: navbar"></nav>
 <header th:replace="partials/header :: header('Welcome to Parker is Creative!')"></header>
 
-<main>
+
     <div>
         <h1>Here is a single post</h1><br>
         <h4 th:text="${post.title}"></h4>
         <p th:text="${post.body}"></p>
     </div>
-</main>
+
 
 <footer th:replace="partials/footer :: footer"></footer>
 
