@@ -52,7 +52,7 @@ public class PostController {
 
     @PostMapping("/posts/{id}/delete")
     public String deletePost(@PathVariable long id){
-        System.out.println("Deleting post...");
+        System.out.println("Delete...Delete...Delete...");
         postsDao.deleteById(id);
         return "redirect:/posts";
     }
@@ -62,12 +62,14 @@ public class PostController {
     @GetMapping("/posts/create")
     @ResponseBody
     public String postForm(){
-        return "Create a post here! this one is showing";
+
+        return "You want to create a post?";
     }
 
     @PostMapping("/posts/create")
     @ResponseBody
     public String createPost(){
-        return "Creating a new post...";
+
+        return "Post up like Kevin Durant...";
     }
 }

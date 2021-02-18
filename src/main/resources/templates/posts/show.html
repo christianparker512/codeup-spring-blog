@@ -13,7 +13,7 @@
         <h4 th:text="${post.title}"></h4>
         <p th:text="${post.body}"></p>
     </div>
-
+<a th:href="@{|/posts/${post.id}/edit|}">Edit Post</a>
 
 <footer th:replace="partials/footer :: footer"></footer>
 
