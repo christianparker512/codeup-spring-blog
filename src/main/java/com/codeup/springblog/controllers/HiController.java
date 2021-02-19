@@ -1,10 +1,7 @@
 package com.codeup.springblog.controllers;
 
 import org.apache.coyote.Request;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/greeting")
@@ -33,6 +30,11 @@ public class HiController {
 
     public String printUserGreeting(@RequestParam String fname, @RequestParam String lname){
         return "Hello there, " + fname + " " +  lname ;
+    }
+    @RequestMapping(value="/orders/{id}", method=RequestMethod.GET)
+    public String getOrder(@PathVariable String id){
+        return "Order ID: " + id;
+
     }
 
 }
