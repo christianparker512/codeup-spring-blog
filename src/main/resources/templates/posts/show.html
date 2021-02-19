@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <meta charset="UTF-8">
-    <title>Parker is Creative!</title>
-</head>
+<meta charset="UTF-8">
+<title>Parker is Creative!</title>
+<head th:replace="partials/head :: header-links"></head>
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 <header th:replace="partials/header :: header('Welcome to Parker is Creative!')"></header>
 
 
     <div>
-        <h1>Here is a single post</h1><br>
+        <h1>Nice to </h1><br>
         <h4 th:text="${post.title}"></h4>
         <p th:text="${post.body}"></p>
     </div>
