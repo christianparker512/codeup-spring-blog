@@ -6,14 +6,19 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 <header th:replace="partials/header :: header('Welcome to Parker is Creative!')"></header>
-
-
+<main>
+    <div class="container">
     <div>
-        <h1>Nice to </h1><br>
-        <h4 th:text="${post.title}"></h4>
-        <p th:text="${post.body}"></p>
-    </div>
+        <a href="/posts"><-- Back to All Posts</a>
+        <div class="card">
+            <h3 th:text="${post.title}" name="title"></h3>
+            <p th:text="'Author: ' + ${post.user.getUsername()}" class="card-subtitle mb-2 text-muted"></p>
+            <p th:text="${post.body}" name="body"></p>
+
 <a th:href="@{|/posts/${post.id}/edit|}">Edit Post</a>
+            <form th:action="@{'/post/' + ${post.id} +'/delete'}" method="post">
+                <input type="submit" value="Delete Post">
+            </form>
 
 <footer th:replace="partials/footer :: footer"></footer>
 

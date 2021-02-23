@@ -1,24 +1,26 @@
 package com.codeup.springblog.controllers;
 
+import com.codeup.springblog.UserRepository;
 import com.codeup.springblog.models.Post;
 import com.codeup.springblog.repository.PostRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-
-
 @Controller
 public class PostController {
     private final PostRepository postsDao;
+    private final UserRepository userDao;
 
-    public PostController(PostRepository postsDao) {
+    public PostController(PostRepository postsDao,
+                          UserRepository userDao)
+    {
         this.postsDao = postsDao;
+        this.userDao = userDao;
     }
 
     @GetMapping("/posts")
     public String postsIndex(Model model){
-//
         model.addAttribute("posts", postsDao.findAll());
 
         return "posts/index";
@@ -42,10 +44,9 @@ public class PostController {
 
         Post post = new Post (
                 id,
-                author,
                 title,
                 body
-        );
+                 );
         postsDao.save(post);
         return "redirect:/posts";
     }
@@ -56,8 +57,6 @@ public class PostController {
         postsDao.deleteById(id);
         return "redirect:/posts";
     }
-
-
 
     @GetMapping("/posts/create")
     @ResponseBody
