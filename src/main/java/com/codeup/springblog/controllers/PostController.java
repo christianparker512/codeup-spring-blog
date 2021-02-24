@@ -1,74 +1,80 @@
 package com.codeup.springblog.controllers;
 
-import com.codeup.springblog.UserRepository;
 import com.codeup.springblog.models.Post;
+import com.codeup.springblog.models.User;
 import com.codeup.springblog.repository.PostRepository;
+import com.codeup.springblog.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.List;
 
 @Controller
 public class PostController {
-    private final PostRepository postsDao;
-    private final UserRepository userDao;
 
-    public PostController(PostRepository postsDao,
-                          UserRepository userDao)
-    {
+    private final PostRepository postsDao;
+    private final UserRepository usersDao;
+
+    public PostController(PostRepository postsDao, UserRepository usersDao) {
         this.postsDao = postsDao;
-        this.userDao = userDao;
+        this.usersDao = usersDao;
     }
 
-    @GetMapping("/posts")
-    public String postsIndex(Model model){
-        model.addAttribute("posts", postsDao.findAll());
-
+    @GetMapping(path = "/posts")
+    public String index(Model model) {
+        List<Post> posts = postsDao.findAll();
+        model.addAttribute("title", "All Posts");
+        model.addAttribute("posts", posts);
         return "posts/index";
     }
 
-    @GetMapping("/posts/{id}")
-    public String postView(Model model, @PathVariable long id){
-//
-        Post post = postsDao.getOne(id);
-        model.addAttribute("post", post);
+    @GetMapping(path = "/posts/{id}")
+    public String indexById(@PathVariable Long id, Model model) {
+        model.addAttribute("title", "Single Post");
+        model.addAttribute("post", postsDao.getOne(id));
         return "posts/show";
     }
 
-    @GetMapping("/posts/{id}/edit")
-    public String viewEditPostForm(@PathVariable long id, Model model){
-        model.addAttribute("post", postsDao.getOne(id));
-        return "posts/edit";
+    @GetMapping("/posts/create")
+    public String postForm(Model model){
+        model.addAttribute("post", new Post());
+        return "posts/create";
     }
-    @PostMapping("/posts/{id}/edit")
-    public String updatePost(@PathVariable long id, @RequestParam String author, @RequestParam String title, @RequestParam String body){
 
-        Post post = new Post (
-                id,
-                title,
-                body
-                 );
+    @PostMapping("/posts/create")
+    public String createPost(@ModelAttribute Post post) {
+
+        User user = (User) usersDao.findAll().get(0);
+        post.setUser(user);
+
         postsDao.save(post);
         return "redirect:/posts";
     }
 
-    @PostMapping("/posts/{id}/delete")
-    public String deletePost(@PathVariable long id){
-        System.out.println("Delete...Delete...Delete...");
-        postsDao.deleteById(id);
+    @GetMapping("/posts/delete/{id}")
+    public RedirectView deletePost(@PathVariable Long id, Model model) {
+        if (postsDao.findById(id).isPresent()) {
+            postsDao.deleteById(id);
+            return new RedirectView("/posts");
+        }
+        return new RedirectView("/posts");
+    }
+
+    @GetMapping("/posts/edit/{id}")
+    public String edit(@PathVariable Long id, Model model) {
+        model.addAttribute("title", "Edit Post");
+        model.addAttribute("post", postsDao.getOne(id));
+        return "posts/edit";
+    }
+
+    @PostMapping("/posts/edit/{id}")
+    public String edited(@PathVariable long id, @ModelAttribute Post post) {
+        User user = (User) usersDao.findAll().get(0);
+        post.setUser(user);
+        postsDao.save(post);
         return "redirect:/posts";
     }
 
-    @GetMapping("/posts/create")
-    @ResponseBody
-    public String postForm(){
-
-        return "You want to create a post?";
-    }
-
-    @PostMapping("/posts/create")
-    @ResponseBody
-    public String createPost(){
-
-        return "Post up like Kevin Durant...";
-    }
 }

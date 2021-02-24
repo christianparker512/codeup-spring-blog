@@ -1,4 +1,4 @@
-create database if not exists blog_db;
+create database if not exists adlister_db;
 use blog_db;
 
 insert into posts (author, title, body) values ('Stayte', 'Spy Who Came in from the Cold, The', 'neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac');
