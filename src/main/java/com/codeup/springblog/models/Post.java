@@ -1,7 +1,7 @@
 package com.codeup.springblog.models;
 
 import javax.persistence.*;
-import java.util.List;
+
 @Entity
 @Table(name = "posts")
 public class Post {
