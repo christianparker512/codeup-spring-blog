@@ -22,6 +22,13 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Post> posts;
 
+    public User(User copy){
+        this.username = copy.username;
+        this.password = copy.password;
+        this.email = copy.email;
+
+    }
+
     public long getId() {
         return id;
     }

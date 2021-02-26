@@ -12,5 +12,10 @@ public class HomeController {
     public String message(){
         return "This is the landing page! Welcome home!";
     }
+    @GetMapping("/login")
+    public String showLoginForm(){
+        return "login";
 
+    }
 }
+
