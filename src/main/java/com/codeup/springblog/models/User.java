@@ -6,8 +6,9 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(nullable = false)
@@ -19,14 +20,26 @@ public class User {
     @Column(nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<Post> posts;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Post> postsCreated;
 
-    public User(User copy){
-        this.username = copy.username;
-        this.password = copy.password;
-        this.email = copy.email;
+    public User(){
 
+    }
+
+    public User(long id, String username, String password, String email) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+
+    }
+
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
     }
 
     public long getId() {
@@ -59,5 +72,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Post> getPostsCreated() {
+        return postsCreated;
+    }
+
+    public void setPostsCreated(List<Post> postsCreated) {
+        this.postsCreated = postsCreated;
     }
 }

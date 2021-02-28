@@ -2,35 +2,28 @@ package com.codeup.springblog.models;
 
 import javax.persistence.*;
 
+//Below will create new table in the springblog_db
 @Entity
 @Table(name = "posts")
 public class Post {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "INT(11) UNSIGNED")
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 200)
     private String title;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+
+    @Column(columnDefinition = "text", nullable = false)
     private String body;
 
-    public User getUser() {
-        return user;
+
+    public Post(){
+
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @ManyToOne
-    private User user;
-
-    public Post() {
-    }
-
-    public Post(long id, String title, String body) {
+    public Post(String title, String body, long id) {
         this.title = title;
         this.body = body;
         this.id = id;
@@ -58,5 +51,17 @@ public class Post {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @ManyToOne
+    @JoinColumn (name = "user_id")
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
