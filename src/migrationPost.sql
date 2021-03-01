@@ -13,8 +13,8 @@ CREATE TABLE users (
 CREATE TABLE posts
                 (
                  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-                title VARCHAR(240) NOT NULL,
-                body  TEXT         NOT NULL,
+                title VARCHAR(255) NOT NULL,
+                body  VARCHAR(10000) NOT NULL,
                 PRIMARY KEY (id)
                 );
 insert into users (email, username, password) values ('parkeriscreative@gmail.com', 'parkeriscreative', 'opensesame');
