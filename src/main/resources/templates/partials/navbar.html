@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>NavBar</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>Home</title>
 </head>
 <body>
-<nav th:fragment="navbar">
-    <ul class="nav bg-dark">
-        <li class="nav-item">
-            <a class="nav-link text-light" th:href="@{/}">Parker is Creative Blog</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-light" th:href="@{/posts}">Posts</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-light" th:href="@{/posts/create}">Create Posts</a>
-        </li>
-        <li class="nav-item ml-auto">
-            <a class="nav-link text-light" th:href="@{/sign-up}">Register</a>
-        </li>
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link text-light" th:href="@{/login}">Login</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <form th:action="@{/logout}" th:method="post">-->
-<!--                <button class="btn-link btn" style="margin-top: 8px">Logout</button>-->
-<!--            </form>-->
-        </li>
-    </ul>
+
+<nav th:fragment="navbar" class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand"><img src="/img/me.png" alt="Parker's Head"></a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/posts">Home</a>
+            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="/roll-dice">Roll Dice</a>-->
+<!--            </li>-->
+            <li class="nav-item">
+                <a class="nav-link" href="sign-up">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <form th:action="@{/logout}" th:method="post">
+                    <a class="nav-link" href="login">Logout</a>
+                </form>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-info btn-sm my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
 </nav>
+
 </body>
+</html>

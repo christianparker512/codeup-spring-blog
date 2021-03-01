@@ -11,34 +11,41 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true, length = 100)
     private String username;
 
-    @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Post> postsCreated;
+    @Column(nullable = false, length = 100)
+    private String password;
 
-    public User(){
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Post> posts;
+
+    public User() {
 
     }
 
-    public User(long id, String username, String password, String email) {
+    public User(long id, String username, String email, String password) {
         this.id = id;
         this.username = username;
-        this.password = password;
         this.email = email;
+        this.password = password;
+    }
 
+    public User(long id, String username, String email, String password, List<Post> posts) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.posts = posts;
     }
 
     public User(User copy) {
-        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
-        email = copy.email;
+        id = copy.id;
         username = copy.username;
+        email = copy.email;
         password = copy.password;
     }
 
@@ -58,14 +65,6 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -74,11 +73,19 @@ public class User {
         this.email = email;
     }
 
-    public List<Post> getPostsCreated() {
-        return postsCreated;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPostsCreated(List<Post> postsCreated) {
-        this.postsCreated = postsCreated;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 }

@@ -9,12 +9,12 @@ import java.util.Collection;
 public class UserWithRoles extends User implements UserDetails {
 
     public UserWithRoles(User copy) {
-        super(copy);  // Call the copy constructor defined in User
+        super(copy);
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        String roles = ""; // Since we're not using the authorization part of the component
+        String roles = "";
         return AuthorityUtils.commaSeparatedStringToAuthorityList(roles);
     }
 

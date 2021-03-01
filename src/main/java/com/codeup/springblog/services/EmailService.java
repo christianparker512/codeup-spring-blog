@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 @Service("mailService")
 public class EmailService {
-
     @Autowired
     public JavaMailSender emailSender;
 
@@ -32,4 +31,5 @@ public class EmailService {
             System.err.println(ex.getMessage());
         }
     }
+
 }
