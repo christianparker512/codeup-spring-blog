@@ -1,7 +1,7 @@
 package com.codeup.springblog.services;
 import com.codeup.springblog.models.User;
 import com.codeup.springblog.models.UserWithRoles;
-import com.codeup.springblog.repositories.Users;
+import com.codeup.springblog.repository.Users;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetailsLoader implements UserDetailsService {
     private final Users users;
-
-
 
     public UserDetailsLoader(Users users) {
         this.users = users;
