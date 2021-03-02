@@ -5,7 +5,10 @@ import com.codeup.springblog.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
@@ -19,9 +22,8 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    @ResponseBody
     public String home() {
-        return "Welcome home";
+        return "This is the landing page!";
     }
 
 
