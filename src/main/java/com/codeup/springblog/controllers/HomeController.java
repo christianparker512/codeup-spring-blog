@@ -21,7 +21,7 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String home() {
-        return "redirect:/login";
+        return "Welcome home";
     }
 
 
