@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="partials/head :: head">
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Parker Creative</title>
 </head>
 <body>
-<nav th:fragment="navbar">let's try this
-</nav>
-<h1>Welcome Home</h1>
+<main>
+    <div class="container center">
+        <h1>Welcome to the Parker Creative</h1>
+    </div>
+    <div class="container center main-quote">
+        <img class="my-image" th:src="@{/img/Christian.jpg}">
+        <blockquote class="quote center-align">
+            “I begin with an idea, and then it becomes something else.”
+            <br>- Pablo Picasso
+        </blockquote>
+    </div>
+</main>
 
 
-<!--<footer th:replace="partials :: footer">-->
-</footer>
+
+<footer th:replace="partials :: footer"></footer>
 </body>
 </html>

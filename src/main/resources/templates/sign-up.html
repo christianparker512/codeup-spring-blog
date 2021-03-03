@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/header :: head">
+<head th:replace="partials/head :: head">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--    <title th:text="${title}"></title>-->
+    <title>Welcome to The Parker Creative!</title>
 </head>
 <body>
 
 <nav th:replace="partials/navbar :: navbar"></nav>
 
 <div class="container">
-    <h1 style="text-align: center">Create an account!</h1>
+    <h1 style="text-align: center">Feel free to set up an account!</h1>
 </div>
 
 <div th:if="${param.error}">
@@ -24,15 +24,15 @@
 
 <form class="container" th:action="@{/sign-up}" method="post" th:object="${user}">
     <div class="form-group">
-        <label for="username">Username</label>
+        <label for="username">Username (Try to make it cool!)</label>
         <input class="form-control" type="text" id="username" th:field="*{username}"/>
     </div>
     <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">Email (I promise I won't Spam.)</label>
         <input class="form-control" type="text" id="email" name="email" th:field="*{email}"/>
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">Password (Write it down. You don't want to lose it)</label>
         <input class="form-control" type="password" id="password" name="password" th:field="*{password}"/>
     </div>
     <input class="btn btn-block btn-primary" type="submit" value="Sign Up!"/>

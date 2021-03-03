@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head">
@@ -6,12 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hey you! How ya doing?</title>
+    <title>The Parker Creative</title>
 </head>
 <body>
-<h1>Hello, <span th:text="${name}">World</span>!</h1>
+<main>
+    <div class="container center">
+        <h1>Welcome to the Parker Creative</h1>
+    </div>
+    <div class="container center main-quote">
+        <img class="my-image" th:src="@{/img/quote.png}">
+    </div>
+</main>
 
-<footer th:replace="partials/partials :: footer">
-</footer>
+
+
+<footer th:replace="partials :: footer"></footer>
 </body>
 </html>

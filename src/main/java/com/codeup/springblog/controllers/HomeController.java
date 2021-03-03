@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 @Controller
 public class HomeController {
 
@@ -24,9 +23,14 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String home() {
-        return "This is the landing page";
+        return "/landing";
     }
 
+    @GetMapping("/home")
+    @ResponseBody
+    public String landing(){
+        return "/landing";
+    }
 
     @GetMapping("/login")
     public String showLoginForm() {
