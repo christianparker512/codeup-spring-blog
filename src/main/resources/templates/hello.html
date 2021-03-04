@@ -9,9 +9,10 @@
     <title>Hey you! How ya doing?</title>
 </head>
 <body>
+<nav th:replace="partials/navbar :: navbar"></nav>
 <h1>Hello, <span th:text="${name}">World</span>!</h1>
 
-<footer th:replace="partials/partials :: footer">
-</footer>
+<div th:replace="partials/footer :: footer"></div>
+
 </body>
 </html>

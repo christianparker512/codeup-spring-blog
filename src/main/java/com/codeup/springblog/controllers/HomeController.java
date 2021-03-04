@@ -21,15 +21,28 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    @ResponseBody
-    public String home() {
-        return "/landing";
+    public String landing() {
+        return "landing";
     }
 
     @GetMapping("/home")
-    @ResponseBody
-    public String landing(){
-        return "/landing";
+    public String home() {
+        return "home";
+    }
+
+    @GetMapping("/resume")
+    public String resume(){
+        return "resume";
+    }
+
+    @GetMapping("/experience")
+    public String experience(){
+        return "artwork";
+    }
+
+    @GetMapping("/projects")
+    public String projects(){
+        return "projects";
     }
 
     @GetMapping("/login")

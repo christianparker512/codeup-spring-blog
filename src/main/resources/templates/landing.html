@@ -8,17 +8,20 @@
     <title>The Parker Creative</title>
 </head>
 <body>
+<nav th:replace="partials/navbar :: navbar"></nav>
+<div class="body">
 <main>
     <div class="container center">
-        <h1>Welcome to the Parker Creative</h1>
+        <h1 style="text-align: center">Welcome to the Parker Creative</h1>
     </div>
     <div class="container center main-quote">
-        <img class="my-image" th:src="@{/img/quote.png}">
+        <img class="quote" th:src="@{/img/quote.png}">
+    </div>
+    <div>
+        <button class="quote" type ="submit" href="/home">Enter</button>
     </div>
 </main>
-
-
-
-<footer th:replace="partials :: footer"></footer>
+</div>
+<div th:replace="partials/footer :: footer"></div>
 </body>
 </html>

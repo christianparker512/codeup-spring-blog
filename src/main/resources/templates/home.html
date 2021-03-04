@@ -8,6 +8,7 @@
     <title>Welcome to Parker Creative</title>
 </head>
 <body>
+<nav th:replace="partials/navbar :: navbar"></nav>
 <main>
     <div class="container center">
         <h1>Welcome to the Parker Creative</h1>
@@ -20,9 +21,6 @@
         </blockquote>
     </div>
 </main>
-
-
-
-<footer th:replace="partials :: footer"></footer>
+<div th:replace="partials/footer :: footer"></div>
 </body>
 </html>
