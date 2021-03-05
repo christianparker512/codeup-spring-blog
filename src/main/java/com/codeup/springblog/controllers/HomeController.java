@@ -24,10 +24,9 @@ public class HomeController {
     public String landing() {
         return "home";
     }
-
-    @GetMapping("/home")
+    @GetMapping("/aboutme")
     public String home() {
-        return "home";
+        return "aboutme";
     }
 
     @GetMapping("/resume")
@@ -35,7 +34,7 @@ public class HomeController {
         return "resume";
     }
 
-    @GetMapping("/experience")
+    @GetMapping("/artwork")
     public String experience(){
         return "artwork";
     }
