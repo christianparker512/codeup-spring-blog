@@ -22,7 +22,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String landing() {
-        return "landing";
+        return "home";
     }
 
     @GetMapping("/home")
