@@ -1,16 +1,23 @@
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: Arial, sans-serif;
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
 }
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
+    /*font-size: 16px;*/
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+    box-sizing: border-box;
 }
 
 .header {
@@ -25,12 +32,12 @@ body {
 
 .hookem {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 
 }
 .hook {
-    height: 35px;
+    height: 3.5rem;
 
 }
 .hookem:hover {
@@ -45,18 +52,22 @@ body {
     text-align: center;
 
 }
+p {
+    margin-top: 30px;
+    color: #ffffff;
+}
 
 .heading-primary {
     color: #ffffff;
     text-transform: uppercase;
     backface-visibility: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 .heading-primary-main {
     display: block;
-    font-size:50px;
+    font-size:5rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 5s;
@@ -66,9 +77,9 @@ body {
 }
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.5px;
+    letter-spacing: 1.75rem;
     animation-delay: 2s;
     animation: moveInRight 5s ease-out;
 
@@ -90,11 +101,11 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     50% {
-        transform: translateX(-20px);
+        transform: translateX(-2rem);
    }
     100% {
         opacity: 1;
@@ -104,7 +115,7 @@ body {
 @keyframes moveInBottom {
     0% {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(1rem);
     }
 
     100% {
@@ -117,18 +128,18 @@ body {
 .btn:visited{
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4.0rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s;
     position:relative;
 }
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 5px rgba(0,0,0,.3);
+    box-shadow: 0 .5rem .5rem rgba(0,0,0,.3);
 }
 .btn:active {
-    transform: translateY(-1px);
+    transform: translateY(-.01rem);
 }
 .btn-white {
     background-color: #fff;
@@ -139,7 +150,7 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left:0;
@@ -158,6 +169,8 @@ body {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
+
+
 
 
 @media screen and (min-width: 576px) {
