@@ -30,22 +30,21 @@ body {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
-
-.hookem {
+.header_hookem {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-
-.hook {
+.header_hook {
   height: 3.5rem;
 }
-
-.hookem:hover {
+.header_hookem:hover {
   animation: moveInRight 3s;
 }
-
-.text-box {
+.header_hookem:hover {
+  animation: moveInRight 3s;
+}
+.header_text-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,7 +63,6 @@ p {
   backface-visibility: hidden;
   margin-bottom: 6rem;
 }
-
 .heading-primary-main {
   display: block;
   font-size: 5rem;
@@ -76,8 +74,7 @@ p {
   /*animation-iteration-count: 3;*/
   animation-timing-function: ease-out;
 }
-
-.heading-primary-sub {
+.heading-primary-primary-sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
