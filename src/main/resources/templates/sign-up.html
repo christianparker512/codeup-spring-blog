@@ -9,7 +9,20 @@
 </head>
 <body>
 
-<nav th:replace="partials/navbar :: navbar"></nav>
+<!--<nav th:replace="partials/navbar :: navbar"></nav>-->
+<nav>
+    <ul class="navigation">
+        <li><a href="/">Home</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/aboutme">About Me</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/artwork">Art Work</a></li>
+    </ul>
+    <div class="button">
+        <a class="btn-main" href="/sign-up">Sign up</a>
+        <a class="btn-hot" href="/login">Login</a>
+    </div>
+</nav>
 
 <div class="container">
     <h1 style="text-align: center">Feel free to set up an account!</h1>

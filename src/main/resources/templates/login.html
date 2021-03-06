@@ -5,10 +5,23 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--    <title th:text="${title}"></title>-->
+    <!--    <link rel=""shortcut icon" type="image/png" href="img/favicon.png">-->
+    <title>Welcome to Parker Creative</title>
 </head>
 <body>
-<nav th:replace="partials/navbar :: navbar"></nav>
+<nav>
+    <ul class="navigation">
+        <li><a href="/">Home</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/aboutme">About Me</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/artwork">Art Work</a></li>
+    </ul>
+    <div class="button">
+        <a class="btn-main" href="/sign-up">Sign up</a>
+        <a class="btn-hot" href="/login">Login</a>
+    </div>
+</nav>
 
 <h1 class="text-center">Please Log In</h1>
 
