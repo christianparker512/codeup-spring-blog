@@ -69,6 +69,10 @@
                 <artifactId>spring-boot-devtools</artifactId>
                 <scope>runtime</scope>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>jquery</groupId>-->
+<!--                <artifactId>3.2.1</artifactId>-->
+<!--             </dependency>-->
     </dependencies>
     <build>
         <plugins>
