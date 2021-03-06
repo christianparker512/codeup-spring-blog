@@ -1,3 +1,14 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "pages/home";
+
 $color-primary: #FF8C00;
 $color-primary-light: #FFA500;
 $color-primary-dark: #FF7F50;
@@ -48,9 +59,6 @@ body {
   &_hookem:hover {
     animation: moveInRight 3s;
   }
-  &_hookem:hover {
-    animation: moveInRight 3s;
-  }
   &_text-box {
     position: absolute;
     top: 50%;
@@ -93,7 +101,6 @@ p {
   }
 }
 
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -132,81 +139,81 @@ p {
     transform: translate(0);
   }
 }
+.btn {
+  &:link,
+  &:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4.0rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position:relative;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem .5rem rgba($color-black,.3);
+  }
+  &:active {
+    transform: translateY(-.01rem);
+    box-shadow: 0 .5rem 1 rem rgba($color-black, .2);
+  }
+  &-white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+  }
+  &::after {
+    content:"";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+    transition: all .4s;
 
-.btn:link,
-.btn:visited{
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4.0rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all .2s;
-  position:relative;
+  }
+  &-white::after{
+    background-color:$color-white;
+  }
+  &-hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+  &-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+  }
 }
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 .5rem .5rem rgba($color-black,.3);
-}
-.btn:active {
-  transform: translateY(-.01rem);
-  box-shadow: 0 .5rem 1 rem rgba($color-black, .2);
-}
-.btn-white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-}
-.btn::after {
-  content:"";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left:0;
-  z-index: -1;
-  transition: all .4s;
-
-}
-.btn-white::after{
-  background-color:$color-white;
-}
-.btn-hover::after{
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-.btn-animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards;
-}
-
-
-
 nav {
   margin: 10px;
   /*background-color: none;*/
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
 }
-nav::after {
-  content: "";
-  clear: both;
-  display: table;
+
 }
 
 .navigation {
   list-style: none;
   float: left;
-}
-.navigation li {
-  display: inline-block;
-  margin-left: 30px;
-}
-.navigation li:first-child {
-  margin: 0;
-}
-.navigation li a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #333;
+  & li {
+    display: inline-block;
+    margin-left: 30px;
+  }
+  & li:first-child {
+    margin: 0;
+  }
+  & li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #333;
+  }
+
 }
 
 .button {
@@ -216,36 +223,37 @@ nav::after {
   float: right;
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards;
-}
 
-.btn-main:link,
-.btn-hot:link {
-  padding: 10px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 100px;
-  text-decoration: none;
-  text-transform: uppercase;
-  /*width: $width-button;*/
-  color: $color-white;
-}
+  &-main:link,
+  &-hot:link {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /*width: $width-button;*/
+    color: $color-white;
+  }
 
-.btn-main:link {
-  background-color: #f08a5d;
-  color: #ffffff;
-}
-.btn-main:hover {
-  background-color: #ea5717;
-  color: #ffffff;
-}
+  &-main:link {
+    background-color: #f08a5d;
+    color: #ffffff;
+  }
+  &-main:hover {
+    background-color: #ea5717;
+    color: #ffffff;
+  }
 
-.btn-hot:link {
-  background-color: #f08a5d;
-  color: #ffffff;
-}
-.btn-hot:hover {
-  background-color: #ea5717;
-  color: #ffffff;
+  &-hot:link {
+    background-color: #f08a5d;
+    color: #ffffff;
+  }
+  &-hot:hover {
+    background-color: #ea5717;
+    color: #ffffff;
+  }
+
 }
 
 @media screen and (min-width: 576px) {
