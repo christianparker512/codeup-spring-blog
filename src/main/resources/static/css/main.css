@@ -217,7 +217,7 @@ nav::after {
     text-decoration: none;
     text-transform: uppercase;
     /*width: $width-button;*/
-    color: #fff;
+    color: #ffffff;
 }
 
 .btn-main:link {
