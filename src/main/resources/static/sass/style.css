@@ -48,6 +48,10 @@ html {
 }
 
 body {
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
@@ -55,7 +59,32 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 3rem;
-  box-sizing: border-box;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+.heading-primary-main {
+  display: block;
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 5s;
+  /*animation-delay: 2s;*/
+  /*animation-iteration-count: 3;*/
+  animation-timing-function: ease-out;
+}
+.heading-primary-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation-delay: 2s;
+  animation: moveInRight 5s ease-out;
 }
 
 .btn:link, .btn:visited {
@@ -133,32 +162,6 @@ body {
 p {
   margin-top: 30px;
   color: #fff;
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 6rem;
-}
-.heading-primary-main {
-  display: block;
-  font-size: 5rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 5s;
-  /*animation-delay: 2s;*/
-  /*animation-iteration-count: 3;*/
-  animation-timing-function: ease-out;
-}
-.heading-primary-primary-sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation-delay: 2s;
-  animation: moveInRight 5s ease-out;
 }
 
 .btn:link, .btn:visited {
