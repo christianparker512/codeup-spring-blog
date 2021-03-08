@@ -231,10 +231,30 @@ body {
   transform: scale(0.8);
 }
 
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+.feature-box_icon {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #FFA500, #FF7F50);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
+
 .row {
   max-width: 114rem;
-  background-color: #eee;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 .row:not(:last-child) {
   margin-bottom: 8rem;
@@ -301,6 +321,17 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(255, 165, 0, 0.8), rgba(255, 127, 80, 0.8)), url("/img/kcparker.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+}
+.section-features > * {
+  transform: skewY(7deg);
 }
 
 p {
