@@ -36,6 +36,11 @@
     transition: all .4s;
 
   }
+  &--orange {
+    background: $color-primary;
+    color: $color-white;
+    display: inline-block;
+  }
   &-white::after{
     background-color:$color-white;
   }

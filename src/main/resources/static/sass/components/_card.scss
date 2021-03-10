@@ -47,7 +47,7 @@
   &__picture {
     background-size: cover;
     height: 23rem;
-    background-blend-mode: color-burn;
+    background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0 , 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0  100%);
     border-top-left-radius: 3px;
@@ -57,7 +57,7 @@
       background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(/img/quincy.JPG);
     }
     &--2 {
-      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/img/baxter.jpg);
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(/img/baxter.jpg);
     }
   }
   &__heading {
@@ -65,7 +65,7 @@
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
-    color: $color-white;
+    color: $color-grey-dark;
     position: absolute;
     top: 12rem;
     right: 2rem;
@@ -100,7 +100,7 @@
         padding: 1rem;
 
         &:not(:last-child) {
-          border-bottom: 1px solid $color-gray-light-2;
+          border-bottom: 1px solid $color-grey-light-1;
         }
       }
     }
@@ -109,22 +109,26 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, 50%);
+      transform: translate(-50%, -50%);
       width: 90%;
       text-align: center;
     }
-    &__price-box {
+    &__dog-box {
       text-align:center;
-      color:$color-white;
+      color:$color-grey-dark;
       margin-bottom: 8rem;
     }
     &__dog-only {
       font-size: 1.6rem;
       text-transform: uppercase;
+      color: $color-grey-dark;
 
     }
     &__dog-lastNameValue {
       font-size: 6rem;
       font-weight: 100;
+      color: $color-grey-dark;
+      text-align: center;
+      text-transform: uppercase;
     }
   }}
