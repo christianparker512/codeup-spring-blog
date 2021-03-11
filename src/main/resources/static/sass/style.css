@@ -480,6 +480,14 @@ body {
   opacity: 1;
 }
 
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .story {
   width: 75%;
   margin: 0 auto;
@@ -671,7 +679,7 @@ body {
   right: 6.5rem;
   background-image: radial-gradient(#FFb900, #FF7730);
   z-index: 1000;
-  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.8s cubic-bezier(0.85, 0, 0.07, 1);
 }
 .navigation__nav {
   height: 100vh;
@@ -704,7 +712,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
-  background-size: 220%;
+  background-size: 240%;
   transition: all 0.4s;
 }
 .navigation__link:link span, .navigation__link:visited span {
