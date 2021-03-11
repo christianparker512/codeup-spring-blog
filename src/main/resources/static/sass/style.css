@@ -487,7 +487,15 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
 }
+.popup__content {
+  width: 75%;
+  height: 50rem;
+  background-color: #fff;
+  box-shadow: 0 2rem 4 rem rgba(0, 0, 0, 0.2);
+}
+
 .story {
   width: 75%;
   margin: 0 auto;
