@@ -856,12 +856,12 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 @media (max-width: 37.5em) {
   .header {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
 }
