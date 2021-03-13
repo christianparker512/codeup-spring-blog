@@ -862,7 +862,7 @@ body {
 @media (max-width: 37.5em) {
   .header {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 .header_hookem {
