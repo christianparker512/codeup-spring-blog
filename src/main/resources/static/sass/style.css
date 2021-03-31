@@ -835,7 +835,7 @@ body {
   width: calc((100% - 6rem )/2);
 }
 .row .col-1-of-3 {
-  width: calc((100% - 2 * 6rem)/3);
+  width: calc((100% - 3 * 6rem)/3);
 }
 .row .col-2-of-3 {
   width: calc(2*((100% - 2 * 6rem) + 6rem)/3);
@@ -857,7 +857,7 @@ body {
   background-position: top;
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 @media (max-width: 37.5em) {
   .header {
